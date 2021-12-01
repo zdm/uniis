@@ -1,0 +1,7 @@
+*.html
+*.fla
+cgi-bin\*.*
+music\*.* 
+graph\*.*
+
+

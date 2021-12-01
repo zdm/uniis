@@ -1,0 +1,33 @@
+<html>
+<head>
+<script language=JavaScript>
+flash4="4found.html"
+flash3="3ornotfound.html"
+
+var plugin = (navigator.mimeTypes && 
+navigator.mimeTypes["application/x-shockwave-flash"]) ? 
+navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin : 0;
+if (plugin && parseInt(plugin.description.substring(plugin.description.indexOf(".")-1)) >=4) 
+      { 
+      window.location = flash4;
+      }
+else if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0
+&& (navigator.userAgent.indexOf("Windows 95")>=0 || navigator.userAgent.indexOf("Windows NT")>=0 || navigator.userAgent.indexOf("Windows 98")>=0)) 
+      {
+      document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+      document.write('on error resume next \n');
+      document.write('var Flashmode\n');
+      document.write(' FlashMode = IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.4"))\n');
+      document.write(' If FlashMode = True Then\n');
+      document.write(' window.location = flash4\n');
+      document.write(' Else\n');
+      document.write(' window.location = flash3\n');
+      document.write(' End If\n');
+      document.write('</SCRIPT\> \n');
+      }
+else  {
+      window.location = flash3;
+      }
+</script>
+</head>
+</html>
